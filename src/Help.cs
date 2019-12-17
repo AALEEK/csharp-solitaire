@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace csharp_solitaire.src
 {
-    public partial class Menu : Form
+    public partial class Help : Form
     {
-        public Menu()
+        public Help()
         {
             InitializeComponent();
-        }
-
-        private void help_btn_Click(object sender, EventArgs e)
-        {
-            Help help = new Help();
-            help.ShowDialog(this);
         }
     }
 }
