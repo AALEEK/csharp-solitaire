@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace csharp_solitaire
+namespace csharp_solitaire.src
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace csharp_solitaire
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Menu());
         }
     }
 }
