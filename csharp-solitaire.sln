@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csharp-solitaire", "csharp-solitaire\csharp-solitaire.csproj", "{6C1E10D9-5151-4107-99C7-49DADD4A3945}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csharp-solitaire", "csharp-solitaire.csproj", "{482C9CB4-ADE9-43EC-9FDB-0F04D3713524}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6C1E10D9-5151-4107-99C7-49DADD4A3945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C1E10D9-5151-4107-99C7-49DADD4A3945}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C1E10D9-5151-4107-99C7-49DADD4A3945}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C1E10D9-5151-4107-99C7-49DADD4A3945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{482C9CB4-ADE9-43EC-9FDB-0F04D3713524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{482C9CB4-ADE9-43EC-9FDB-0F04D3713524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{482C9CB4-ADE9-43EC-9FDB-0F04D3713524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{482C9CB4-ADE9-43EC-9FDB-0F04D3713524}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BCD9BB06-72B6-4BDB-919C-1CC1FAB08F39}
+		SolutionGuid = {231A3969-69DD-4BC0-A031-9DD6EDD6B57C}
 	EndGlobalSection
 EndGlobal

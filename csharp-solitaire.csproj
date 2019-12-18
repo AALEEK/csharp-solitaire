@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{482C9CB4-ADE9-43EC-9FDB-0F04D3713524}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>csharp_solitaire</RootNamespace>
+    <AssemblyName>csharp-solitaire</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="src\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\2C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\2D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\2H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\2S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\3C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\3D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\3H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\3S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\4C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\4D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\4H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\4S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\5C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\5D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\5H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\5S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\6C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\6D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\6H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\6S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\7C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\7D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\7H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\7S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\8C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\8D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\8H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\8S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\9C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\9D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\9H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\9S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\10C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\10D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\10H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\10S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\AC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\aces.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\AD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\AH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\AS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\JC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\JD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\JH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\JS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\KC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\KD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\KH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\KS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\QC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\QD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\QH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\QS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\red_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
