@@ -19,8 +19,16 @@ namespace csharp_solitaire.src
 
         private void help_btn_Click(object sender, EventArgs e)
         {
-            Help help = new Help();
+            Help help = new Help(this);
+            this.Hide();
             help.ShowDialog(this);
+        }
+
+        private void play_btn_Click(object sender, EventArgs e)
+        {
+            Game game = new Game(this);
+            this.Hide();
+            game.ShowDialog(this);
         }
     }
 }
