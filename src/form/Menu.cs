@@ -12,15 +12,27 @@ namespace csharp_solitaire.src
 {
     public partial class Menu : Form
     {
+        Game game;
+        Help help;
+
         public Menu()
         {
             InitializeComponent();
+
+            game = new Game(this);
+            help = new Help(this);
         }
 
         private void help_btn_Click(object sender, EventArgs e)
         {
-            Help help = new Help();
-            help.ShowDialog(this);
+            help.Show();
+            this.Hide();
+        }
+
+        private void play_btn_Click(object sender, EventArgs e)
+        {
+            game.Show();
+            this.Hide();
         }
     }
 }

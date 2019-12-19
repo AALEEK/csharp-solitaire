@@ -60,6 +60,7 @@
             this.play_btn.TabIndex = 1;
             this.play_btn.Text = "Play";
             this.play_btn.UseVisualStyleBackColor = false;
+            this.play_btn.Click += new System.EventHandler(this.play_btn_Click);
             // 
             // help_btn
             // 
