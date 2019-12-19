@@ -63,22 +63,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\Game.cs">
+    <Compile Include="src\form\Game.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\Game.Designer.cs">
+    <Compile Include="src\form\Game.Designer.cs">
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\Help.cs">
+    <Compile Include="src\form\Help.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\Help.Designer.cs">
+    <Compile Include="src\form\Help.Designer.cs">
       <DependentUpon>Help.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\Menu.cs">
+    <Compile Include="src\form\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\Menu.Designer.cs">
+    <Compile Include="src\form\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Program.cs" />
@@ -93,13 +93,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="src\Game.resx">
+    <EmbeddedResource Include="src\form\Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Help.resx">
+    <EmbeddedResource Include="src\form\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Menu.resx">
+    <EmbeddedResource Include="src\form\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
