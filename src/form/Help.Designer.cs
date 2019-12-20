@@ -27,14 +27,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
             this.back_btn = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // back_btn
             // 
             this.back_btn.BackColor = System.Drawing.Color.Gold;
             this.back_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.back_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.back_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.back_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.back_btn.Location = new System.Drawing.Point(325, 385);
             this.back_btn.Name = "back_btn";
@@ -44,17 +46,29 @@
             this.back_btn.UseVisualStyleBackColor = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.ForestGreen;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Location = new System.Drawing.Point(-1, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(802, 357);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.back_btn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Help";
-            this.Text = "Help";
-            this.Load += new System.EventHandler(this.Help_Load);
+            this.Text = "How To Play";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Help_FormClosing);
+            this.Load += new System.EventHandler(this.Help_Load);
             this.ResumeLayout(false);
 
         }
@@ -62,5 +76,6 @@
         #endregion
 
         private System.Windows.Forms.Button back_btn;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
