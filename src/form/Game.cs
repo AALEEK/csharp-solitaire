@@ -31,5 +31,10 @@ namespace csharp_solitaire.src
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
