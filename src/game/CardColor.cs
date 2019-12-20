@@ -14,5 +14,15 @@ namespace csharp_solitaire.src.game
 
         public static CardColor BLACK { get { return new CardColor("BLACK"); } }
         public static CardColor RED { get { return new CardColor("RED"); } }
+
+        public static List<CardColor> GetAll()
+        {
+            List<CardColor> list = new List<CardColor>();
+
+            list.Add(BLACK);
+            list.Add(RED);
+
+            return list;
+        }
     }
 }
