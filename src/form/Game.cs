@@ -1,4 +1,5 @@
-﻿using System;
+﻿using csharp_solitaire.src.game;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +24,7 @@ namespace csharp_solitaire.src
 
         private void Game_Load(object sender, EventArgs e)
         {
-
+            Card test = new Card("card");
         }
 
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
