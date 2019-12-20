@@ -24,7 +24,8 @@ namespace csharp_solitaire.src
 
         private void Game_Load(object sender, EventArgs e)
         {
-            Card test = new Card("card");
+            Card test2 = new Card("card2", new System.Drawing.Point(24, 12));
+            this.Controls.Add(test2);
         }
 
         private void Game_FormClosing(object sender, FormClosingEventArgs e)

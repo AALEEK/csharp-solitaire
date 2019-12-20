@@ -20,5 +20,22 @@ namespace csharp_solitaire.src.game
             TabIndex = 0;
             TabStop = false;
         }
+
+        public Card(string name, System.Drawing.Point location)
+        {
+            BackColor = System.Drawing.Color.Transparent;
+            BackgroundImage = global::csharp_solitaire.Properties.Resources.red_back;
+            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            Location = location;
+            Name = name;
+            Size = new System.Drawing.Size(80, 128);
+            TabIndex = 0;
+            TabStop = false;
+        }
+
+        public Card(string name, int value, CardSuit suit, CardColor color)
+        {
+
+        }
     }
 }
