@@ -29,7 +29,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
             this.back_btn = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.help_text = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // back_btn
@@ -38,7 +38,7 @@
             this.back_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.back_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.back_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.back_btn.Location = new System.Drawing.Point(325, 385);
+            this.back_btn.Location = new System.Drawing.Point(427, 508);
             this.back_btn.Name = "back_btn";
             this.back_btn.Size = new System.Drawing.Size(150, 53);
             this.back_btn.TabIndex = 2;
@@ -46,23 +46,23 @@
             this.back_btn.UseVisualStyleBackColor = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
-            // richTextBox1
+            // help_text
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.ForestGreen;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(-1, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(802, 357);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.help_text.BackColor = System.Drawing.Color.PaleGreen;
+            this.help_text.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.help_text.Location = new System.Drawing.Point(12, 12);
+            this.help_text.Name = "help_text";
+            this.help_text.Size = new System.Drawing.Size(980, 490);
+            this.help_text.TabIndex = 3;
+            this.help_text.Text = resources.GetString("help_text.Text");
             // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(1004, 573);
+            this.Controls.Add(this.help_text);
             this.Controls.Add(this.back_btn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Help";
@@ -76,6 +76,6 @@
         #endregion
 
         private System.Windows.Forms.Button back_btn;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox help_text;
     }
 }

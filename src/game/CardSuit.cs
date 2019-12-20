@@ -16,5 +16,17 @@ namespace csharp_solitaire.src.game
         public static CardSuit HEART { get { return new CardSuit("HEART"); } }
         public static CardSuit CLUB { get { return new CardSuit("CLUB"); } }
         public static CardSuit DIAMOND { get { return new CardSuit("DIAMOND"); } }
+
+        public static List<CardSuit> GetAll()
+        {
+            List<CardSuit> list = new List<CardSuit>();
+
+            list.Add(SPADE);
+            list.Add(HEART);
+            list.Add(CLUB);
+            list.Add(DIAMOND);
+
+            return list;
+        }
     }
 }
