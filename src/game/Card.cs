@@ -13,10 +13,15 @@ namespace csharp_solitaire.src.game
         private bool mouseDown;
         private Point lastLocation;
 
-        public Card(int value, CardSuit suit, CardColor color, Point location)
+        private CardSuit suit;
+        private int value;
+
+        public Card(int value, CardSuit suit, Point location)
         {
+            this.suit = suit;
+            this.value = value;
+
             BackColor = System.Drawing.Color.Transparent;
-            BackgroundImage = global::csharp_solitaire.Properties.Resources.red_back;
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             Location = location;
             Size = new System.Drawing.Size(80, 128);
@@ -24,9 +29,43 @@ namespace csharp_solitaire.src.game
             TabStop = false;
         }
 
-        public Card(int value, CardSuit suit, CardColor color) : this(value, suit, color, new Point(12, 12)) { }
+        public Card(int value, CardSuit suit) : this(value, suit, new Point(12, 12)) { }
 
-        public Card() : this(1, CardSuit.DIAMOND, CardColor.BLACK, new Point(12, 12)) { }
+        public Card() : this(1, CardSuit.DIAMOND, new Point(12, 12)) { }
+
+        public void FaceUp()
+        {
+            BackgroundImage = GetFrontBitmap();
+        }
+
+        public void FaceDown()
+        {
+            BackgroundImage = global::csharp_solitaire.Properties.Resources.red_back;
+        }
+
+        private Bitmap GetFrontBitmap()
+        {
+            Bitmap image = global::csharp_solitaire.Properties.Resources.red_back;
+
+            if (suit == CardSuit.CLUB)
+            {
+
+            }
+            else if (suit == CardSuit.DIAMOND)
+            {
+
+            }
+            else if (suit == CardSuit.HEART)
+            {
+
+            }
+            else if (suit == CardSuit.SPADE)
+            {
+
+            }
+
+            return image;
+        }
 
         public void MakeDraggable()
         {
