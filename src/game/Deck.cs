@@ -19,26 +19,13 @@ namespace csharp_solitaire.src.game
         {
             if (deckList.Count > 0) {
                 deckList.Clear();
-            }
 
-            //init Spades
+            //init Cards
             for (int i = 1; i <= 13; i++) {
-                deckList.Add(new Card(i, CardSuit.SPADE, CardColor.BLACK));
-            }
-
-            //init Hearts
-            for (int i = 1; i <= 13; i++) {
-                deckList.Add(new Card(i, CardSuit.HEART, CardColor.BLACK));
-            }
-
-            //init Diamonds
-            for (int i = 1; i <= 13; i++) {
-                deckList.Add(new Card(i, CardSuit.DIAMOND, CardColor.BLACK));
-            }
-
-            //init Clubs
-            for (int i = 1; i <= 13; i++) {
-                deckList.Add(new Card(i, CardSuit.CLUB, CardColor.BLACK));
+                deckList.Add(new Card(i, CardSuit.SPADE));
+                deckList.Add(new Card(i, CardSuit.HEART));
+                deckList.Add(new Card(i, CardSuit.DIAMOND));
+                deckList.Add(new Card(i, CardSuit.CLUB));
             }
         }
 
