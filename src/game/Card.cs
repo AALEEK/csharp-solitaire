@@ -29,6 +29,32 @@ namespace csharp_solitaire.src.game
             TabStop = false;
         }
 
+        public Card() : this(1, CardSuit.DIAMOND, CardColor.BLACK, new Point(12, 12)) { }
+
+        public void MakeDraggable()
+        {
+            this.MouseDown += Card_MouseDown;
+            this.MouseMove += Card_MouseMove;
+            this.MouseUp += Card_MouseUp;
+        }
+
+        private void Card_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void Card_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown) {
+                Card card = (Card)sender;
+                card.Location = new Point(
+                    (card.Location.X - lastLocation.X) + e.X, (card.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
         public Card(int value, CardSuit suit) : this(value, suit, new Point(12, 12)) { }
 
         public Card() : this(1, CardSuit.DIAMOND, new Point(12, 12)) { }
