@@ -21,10 +21,10 @@ namespace csharp_solitaire.src.game
             this.suit = suit;
             this.value = value;
 
-            BackColor = System.Drawing.Color.Transparent;
-            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            BackColor = Color.Transparent;
+            BackgroundImageLayout = ImageLayout.Zoom;
             Location = location;
-            Size = new System.Drawing.Size(80, 128);
+            Size = new Size(80, 128);
             TabIndex = 0;
             TabStop = false;
         }
@@ -40,16 +40,23 @@ namespace csharp_solitaire.src.game
 
         public void FaceDown()
         {
-            BackgroundImage = global::csharp_solitaire.Properties.Resources.red_back;
+            BackgroundImage = Properties.Resources.red_back;
         }
 
         private Bitmap GetFrontBitmap()
         {
-            Bitmap image = global::csharp_solitaire.Properties.Resources.red_back;
+            Bitmap image = Properties.Resources.red_back;
 
             if (suit == CardSuit.CLUB)
             {
-
+                if (value == 1)
+                {
+                    image = Properties.Resources._1C;
+                }
+                else if (value == 2)
+                {
+                    image = Properties.Resources._2C;
+                }
             }
             else if (suit == CardSuit.DIAMOND)
             {
