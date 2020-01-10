@@ -84,8 +84,10 @@
     <Compile Include="src\game\Card.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="src\game\CardPos.cs" />
     <Compile Include="src\game\CardSuit.cs" />
     <Compile Include="src\game\Deck.cs" />
+    <Compile Include="src\game\tools\CardTools.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
