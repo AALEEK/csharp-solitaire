@@ -29,6 +29,7 @@ namespace csharp_solitaire.src
             foreach (Card card in deck.GetList()) {
                 this.Controls.Add(card);
                 card.MakeDraggable();
+                card.FaceUp();
             }
         }
 

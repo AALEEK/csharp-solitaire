@@ -19,6 +19,7 @@ namespace csharp_solitaire.src.game
         {
             if (deckList.Count > 0) {
                 deckList.Clear();
+            }
 
             //init Cards
             for (int i = 1; i <= 13; i++) {

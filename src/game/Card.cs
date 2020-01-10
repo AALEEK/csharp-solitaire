@@ -5,6 +5,7 @@ using System.Text;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using csharp_solitaire.src.game.tools;
 
 namespace csharp_solitaire.src.game
 {
@@ -27,77 +28,22 @@ namespace csharp_solitaire.src.game
             Size = new Size(80, 128);
             TabIndex = 0;
             TabStop = false;
-        }
 
-        public Card() : this(1, CardSuit.DIAMOND, CardColor.BLACK, new Point(12, 12)) { }
-
-        public void MakeDraggable()
-        {
-            this.MouseDown += Card_MouseDown;
-            this.MouseMove += Card_MouseMove;
-            this.MouseUp += Card_MouseUp;
-        }
-
-        private void Card_MouseDown(object sender, MouseEventArgs e)
-        {
-            mouseDown = true;
-            lastLocation = e.Location;
-        }
-
-        private void Card_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mouseDown) {
-                Card card = (Card)sender;
-                card.Location = new Point(
-                    (card.Location.X - lastLocation.X) + e.X, (card.Location.Y - lastLocation.Y) + e.Y);
-
-                this.Update();
-            }
+            FaceDown();
         }
 
         public Card(int value, CardSuit suit) : this(value, suit, new Point(12, 12)) { }
 
-        public Card() : this(1, CardSuit.DIAMOND, new Point(12, 12)) { }
+        public Card() : this(1, CardSuit.DIAMOND) { }
 
         public void FaceUp()
         {
-            BackgroundImage = GetFrontBitmap();
+            BackgroundImage = CardTools.GetFrontBitmap(suit, value);
         }
 
         public void FaceDown()
         {
             BackgroundImage = Properties.Resources.red_back;
-        }
-
-        private Bitmap GetFrontBitmap()
-        {
-            Bitmap image = Properties.Resources.red_back;
-
-            if (suit == CardSuit.CLUB)
-            {
-                if (value == 1)
-                {
-                    image = Properties.Resources._1C;
-                }
-                else if (value == 2)
-                {
-                    image = Properties.Resources._2C;
-                }
-            }
-            else if (suit == CardSuit.DIAMOND)
-            {
-
-            }
-            else if (suit == CardSuit.HEART)
-            {
-
-            }
-            else if (suit == CardSuit.SPADE)
-            {
-
-            }
-
-            return image;
         }
 
         public void MakeDraggable()
