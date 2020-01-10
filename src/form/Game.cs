@@ -15,6 +15,8 @@ namespace csharp_solitaire.src
     {
         Form prevForm;
 
+        Deck deck;
+
         public Game(Form prevForm)
         {
             InitializeComponent();
@@ -22,9 +24,16 @@ namespace csharp_solitaire.src
             this.prevForm = prevForm;
         }
 
+        public void StartingPos()
+        {
+            for (int i = 0; i < deck.GetList().Count; i++) {
+                
+            }
+        }
+
         private void Game_Load(object sender, EventArgs e)
         {
-            Deck deck = new Deck();
+            deck = new Deck();
 
             foreach (Card card in deck.GetList()) {
                 this.Controls.Add(card);
