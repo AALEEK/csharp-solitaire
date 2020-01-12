@@ -36,6 +36,17 @@ namespace csharp_solitaire.src.game
 
         public Card() : this(1, CardSuit.DIAMOND) { }
 
+        public void UpdateLocation(int x, int y)
+        {
+            if (y < 0) {
+                y = Location.Y;
+            }
+            if (x < 0) {
+                x = Location.X;
+            }
+            Location = new Point(x, y);
+        }
+
         public void FaceUp()
         {
             BackgroundImage = CardTools.GetFrontBitmap(suit, value);
