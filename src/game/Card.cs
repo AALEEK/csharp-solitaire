@@ -124,6 +124,11 @@ namespace csharp_solitaire.src.game
                 for (int i = pileCards.Count - 1; i >= pileCards.Count - 3; i--) {
                     pileCards[i].UpdateLocation(pileCards[i].Location.X, pileCards[i].Location.Y + k * SPACING);
                     pileCards[i].SetOutOfPile(true);
+                    pileCards[i].FaceUp();
+                    pileCards[i].BringToFront();
+                    if (k == 5) {
+                        pileCards[i].MakeDraggable();
+                    }
                     k++;
                     Card item = pileCards[i];
                     pileCards.Remove(item);
