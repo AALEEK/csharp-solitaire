@@ -12,14 +12,12 @@ namespace csharp_solitaire.src
 {
     public partial class Menu : Form
     {
-        Game game;
         Help help;
 
         public Menu()
         {
             InitializeComponent();
 
-            game = new Game(this);
             help = new Help(this);
         }
 
@@ -31,6 +29,8 @@ namespace csharp_solitaire.src
 
         private void play_btn_Click(object sender, EventArgs e)
         {
+            Game game = new Game(this);
+
             game.Show();
             this.Hide();
         }

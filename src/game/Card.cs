@@ -17,10 +17,17 @@ namespace csharp_solitaire.src.game
         private CardSuit suit;
         private int value;
 
+        private bool inPile = false;
+        private bool isOutOfPile = false;
+        private List<Card> pileCards = new List<Card>();
+
         public Card(int value, CardSuit suit, Point location)
         {
             this.suit = suit;
             this.value = value;
+
+            this.MouseDown += Card_MouseDown;
+            this.MouseUp += Card_MouseUp;
 
             BackColor = Color.Transparent;
             BackgroundImageLayout = ImageLayout.Zoom;
@@ -36,6 +43,43 @@ namespace csharp_solitaire.src.game
 
         public Card() : this(1, CardSuit.DIAMOND) { }
 
+        public void UpdateLocation(int x, int y)
+        {
+            if (y < 0) {
+                y = Location.Y;
+            }
+            if (x < 0) {
+                x = Location.X;
+            }
+            Location = new Point(x, y);
+        }
+
+        public void SetInPile(bool val)
+        {
+            inPile = val;
+        }
+
+        public void SetInPile(bool val, List<Card> pile)
+        {
+            inPile = val;
+            pileCards.AddRange(pile);
+        }
+
+        public bool InPile()
+        {
+            return inPile;
+        }
+
+        public void SetOutOfPile(bool val)
+        {
+            isOutOfPile = val;
+        }
+
+        public bool OutOfPile()
+        {
+            return isOutOfPile;
+        }
+
         public void FaceUp()
         {
             BackgroundImage = CardTools.GetFrontBitmap(suit, value);
@@ -48,15 +92,14 @@ namespace csharp_solitaire.src.game
 
         public void MakeDraggable()
         {
-            this.MouseDown += Card_MouseDown;
             this.MouseMove += Card_MouseMove;
-            this.MouseUp += Card_MouseUp;
         }
 
         private void Card_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;
             lastLocation = e.Location;
+            this.BringToFront();
         }
 
         private void Card_MouseMove(object sender, MouseEventArgs e)
@@ -73,6 +116,25 @@ namespace csharp_solitaire.src.game
         private void Card_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+
+            if (inPile && !isOutOfPile) {
+                const int SPACING = 48;
+                int k = 3;
+
+                for (int i = pileCards.Count - 1; i >= pileCards.Count - 3; i--) {
+                    pileCards[i].UpdateLocation(pileCards[i].Location.X, pileCards[i].Location.Y + k * SPACING);
+                    pileCards[i].SetOutOfPile(true);
+                    pileCards[i].FaceUp();
+                    pileCards[i].BringToFront();
+                    if (k == 5) {
+                        pileCards[i].MakeDraggable();
+                    }
+                    k++;
+                    Card item = pileCards[i];
+                    pileCards.Remove(item);
+                    pileCards.Insert(0, item);
+                }
+            }
         }
     }
 }
