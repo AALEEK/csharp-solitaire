@@ -16,6 +16,7 @@ namespace csharp_solitaire.src
         Form prevForm;
 
         Deck deck;
+        List<Card> cardPile = new List<Card>();
 
         public Game(Form prevForm)
         {
@@ -23,6 +24,8 @@ namespace csharp_solitaire.src
 
             this.prevForm = prevForm;
         }
+
+
 
         public void StartingPos()
         {
@@ -32,11 +35,14 @@ namespace csharp_solitaire.src
 
             for (int i = 0; i < 24; i++) {
                 Card temp = cardsToMove.Dequeue();
+                temp.SetInPile(true, cardPile);
+                cardPile.Add(temp);
             }
 
             Card pos1 = cardsToMove.Dequeue();
             pos1.UpdateLocation(CardX.POS_1, -1);
             pos1.FaceUp();
+            pos1.MakeDraggable();
 
             for (int i = 0; i < 2; i++) {
                 Card temp = cardsToMove.Dequeue();
@@ -108,6 +114,12 @@ namespace csharp_solitaire.src
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            prevForm.Show();
+            this.Dispose();
         }
     }
 }
